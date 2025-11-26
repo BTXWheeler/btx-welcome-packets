@@ -1,0 +1,35 @@
+# BTX Welcome Packet Generator - Authentication Configuration
+# 
+# IMPORTANT: Keep this file secure and never commit it to public repositories!
+#
+# Password Hashing: Use password_hasher.py to generate hashed passwords
+# Default password below is: changeme123 (YOU MUST CHANGE THIS!)
+
+credentials:
+  usernames:
+    btx_admin:
+      name: Credit Team
+      
+      password: $2b$12$abc123def456ghi789jkl012mno345pqr678stu901vwx234yz
+      email: communications@btxglobal.com
+    
+    # Add more users below (run password_hasher.py to generate password hashes):
+    # credit_team:
+    #   name: Credit Department
+    #   password: $2b$12$your_hashed_password_here
+    #   email: credit@btxglobal.com
+
+cookie:
+  expiry_days: 30  # Number of days before cookie expires (users must re-login)
+  key: btx_welcome_packet_signature_key_change_this  # Change this to a random string
+  name: btx_welcome_packet_auth
+
+preauthorized:
+  # List emails that are pre-authorized to register (if using registration feature)
+  emails: []
+
+# Notes:
+# - To add a new user, run password_hasher.py to generate a hashed password
+# - Copy the generated hash to the password field above
+# - Users will use their plain text password to log in
+# - Never store plain text passwords in this file!
